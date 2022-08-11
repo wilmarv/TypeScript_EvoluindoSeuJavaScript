@@ -1,9 +1,9 @@
 class Negociacao {
 
     constructor(
-        private readonly data: Date,
-        private readonly quantidade: number,
-        private readonly valor: number
+        readonly data: Date,
+        readonly quantidade: number,
+        readonly valor: number
     ) { }
 
     get volume() {
