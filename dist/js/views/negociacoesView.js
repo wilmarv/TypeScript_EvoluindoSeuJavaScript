@@ -4,7 +4,7 @@ class NegociacoesView {
     }
     template(model) {
         return `
-        <table class="table-hover table-bordered">
+        <table class="table table-hover table-bordered">
             <thead>
                 <tr>
                     <th> DATA </th>

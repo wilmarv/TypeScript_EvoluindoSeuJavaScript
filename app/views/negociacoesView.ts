@@ -1,16 +1,11 @@
 import Negociacoes from "../models/negociacoes.js";
+import View from "./view.js";
 
-class NegociacoesView {
-
-    private element: HTMLElement;
-
-    constructor(seletor: string) {
-        this.element = document.querySelector(seletor);
-    }
+class NegociacoesView extends View<Negociacoes> {
 
     template(model: Negociacoes): string {
         return `
-        <table class="table-hover table-bordered">
+        <table class="table table-hover table-bordered">
             <thead>
                 <tr>
                     <th> DATA </th>
@@ -33,10 +28,6 @@ class NegociacoesView {
             </tbody>
         </table>
         `;
-    }
-
-    update(model: Negociacoes): void {
-        this.element.innerHTML = this.template(model);
     }
 }
 export default NegociacoesView;
