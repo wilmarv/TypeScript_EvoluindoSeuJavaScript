@@ -38,13 +38,19 @@ class NegociacaoController {
         }
 
         this.negociacoes.adicionar(negociacao);
-        imprimir(negociacao,this.negociacoes);
+        imprimir(negociacao, this.negociacoes);
         this.limparFormulario();
         this.atualizaView();
     }
 
     public importaDados(): void {
         this.negociacoesService.obterNegociacoesDoDia()
+            .then(negociacoesDeHoje => {
+                return negociacoesDeHoje.filter(negociacaoDeHoje => {
+                    return !this.negociacoes
+                        .lista().some(negociacao => negociacao.ehIgual(negociacaoDeHoje));
+                })
+            })
             .then(negciacoesDeHoje => {
                 for (let negociacao of negciacoesDeHoje)
                     this.negociacoes.adicionar(negociacao);

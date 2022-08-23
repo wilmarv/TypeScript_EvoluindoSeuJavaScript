@@ -1,7 +1,6 @@
-import Negociacao from "../models/negociacao.js";
-import Negociacoes from "../models/negociacoes.js";
+import Imprimivel from "./imprimivel.js";
 
-function imprimir(...objetos: Array<Negociacao | Negociacoes>) {
+function imprimir(...objetos: Array<Imprimivel>) {
     for (let objeto of objetos) {
         console.log(objeto.paraTexto());
     }

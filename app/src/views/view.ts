@@ -1,6 +1,3 @@
-import inspect from "../decorators/inspect.js";
-import logarTempoDeExecucao from "../decorators/logarTempoDeExecucao.js";
-
 abstract class View<T> {
     protected elemento: HTMLElement;
 
